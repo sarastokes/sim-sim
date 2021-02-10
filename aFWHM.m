@@ -23,9 +23,11 @@ function fwhm = aFWHM(wl, NA, n, microscopeType)
     % Reference:
     %   Eq16 in Wilson (2011) Journal of Microscopy, 244, 113-121
     %   NA from Gray et al (2008) IOVS, 49, 467-473
+    %   n from Atchinson ch 16 in Handbook of Visual Optics
     %
     % History:
     %   07Feb2021 - SSP
+    % ---------------------------------------------------------------------
 
     if nargin < 4
         microscopeType = 'conv';
@@ -33,7 +35,7 @@ function fwhm = aFWHM(wl, NA, n, microscopeType)
 
     if nargin < 3 || isempty(n)
         % Refractive index of the lens
-        n = 1.44;  
+        n = 1.42;  
     end
 
     if nargin < 2 || isempty(NA)
