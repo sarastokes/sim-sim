@@ -1,9 +1,11 @@
 # CHANGELOG
 
+### 02-18-2021
+- `fovPixelSize.m` - get pixel size in microns for a specific field of view
 
 ### 02-10-2021
 - `getSimResolutions.m` - utility function to compare the two systems
-- 
+
 ### 02-09-2021
 - `main.m` - Script running resolution simulations (work in progress)
 - `maxProj.m` - Fast plot of max Z-projection

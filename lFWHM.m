@@ -21,6 +21,7 @@ function fwhm = lFWHM(wl, NA, microscopeType)
     %
     % History:
     %   07Feb2021 - SSP
+    % ---------------------------------------------------------------------
 
     if nargin < 3
         microscopeType = 'conv';
