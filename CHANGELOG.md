@@ -1,7 +1,14 @@
 # CHANGELOG
 
+### 02-19-2021
+- `lateralIntensityDist.m`, `axialIntensityDist.m` - airy patterns for axial and lateral
+- `lateralOU.m`, `axialOU.m` - convert to optical units 
+- `parseParameters.m` - parameter parsing common to optical functions
+
 ### 02-18-2021
 - `fovPixelSize.m` - get pixel size in microns for a specific field of view
+- `nyquistSampleDist.m` - calculate critical Nyquist sampling distance
+- `assumptions.m` - store hard-coded default values in a single place
 
 ### 02-10-2021
 - `getSimResolutions.m` - utility function to compare the two systems

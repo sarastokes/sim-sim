@@ -12,9 +12,9 @@ function T = getSimResolutions(varargin)
     % ---------------------------------------------------------------------
 
     ip = inputParser();
-    addParameter(ip, 'wl', 0.535, @isnumeric);
-    addParameter(ip, 'n', [], @isnumeric);
-    addParameter(ip, 'NA', [], @isnumeric);
+    addParameter(ip, 'wl', assumptions('wl'), @isnumeric);
+    addParameter(ip, 'n', assumptions('n'), @isnumeric);
+    addParameter(ip, 'NA', assumptions('na'), @isnumeric);
     addParameter(ip, 'Output', 'fwhm',... 
         @(x) ismember(lower(x), {'fwhm', 'sd'}));
     parse(ip, varargin{:});

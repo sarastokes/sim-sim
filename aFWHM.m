@@ -13,7 +13,7 @@ function fwhm = aFWHM(wl, NA, n, microscopeType)
     %   NA                  float
     %       Numerical aperture (default = Gray 2008, 0.2335)
     %   n                   float
-    %       Refractive index (default = lens, 1.44)
+    %       Refractive index (default = lens, 1.42)
     %   microscopeType      {'conv', 'conf'}
     %       Confocal or conventional microscope? (default = 'conv')
     %
@@ -27,6 +27,7 @@ function fwhm = aFWHM(wl, NA, n, microscopeType)
     %
     % History:
     %   07Feb2021 - SSP
+    %   18Feb2021 - SSP - Added assumptions call rather than hard-coding
     % ---------------------------------------------------------------------
 
     if nargin < 4
@@ -34,13 +35,11 @@ function fwhm = aFWHM(wl, NA, n, microscopeType)
     end
 
     if nargin < 3 || isempty(n)
-        % Refractive index of the lens
-        n = 1.42;  
+        n = assumptions('refractive index'); 
     end
 
     if nargin < 2 || isempty(NA)
-        % Midpoint of Gray 2008 range
-        NA = 0.229 + (0.238-0.229)/2;  
+        NA = assumptions('numerical aperture'); 
     end 
 
     switch microscopeType 

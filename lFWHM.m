@@ -21,6 +21,7 @@ function fwhm = lFWHM(wl, NA, microscopeType)
     %
     % History:
     %   07Feb2021 - SSP
+    %   18Feb2021 - SSP - Added assumptions call rather than hard-coding
     % ---------------------------------------------------------------------
 
     if nargin < 3
@@ -28,8 +29,7 @@ function fwhm = lFWHM(wl, NA, microscopeType)
     end
 
     if nargin < 2 || isempty(NA)
-        % Midpoint of Gray 2008 range
-        NA = 0.229 + (0.238-0.229)/2;  
+        NA = assumptions('numerical aperture');  
     end
 
     switch microscopeType 
