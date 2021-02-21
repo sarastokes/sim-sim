@@ -1,5 +1,10 @@
 # CHANGELOG
 
+### 02-20-2021
+- Added confocal option to `lateralIntensityDist.m` and `axialIntensityDist.m`
+- `leica.m` - properties of Leica confocal used for some sample images
+- Cleaned up inputs and outputs to `getSimResolutions.m`
+
 ### 02-19-2021
 - `lateralIntensityDist.m`, `axialIntensityDist.m` - airy patterns for axial and lateral
 - `lateralOU.m`, `axialOU.m` - convert to optical units 

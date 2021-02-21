@@ -28,4 +28,6 @@ function value = assumptions(key)
             value = 0.555;
         case {'rhodamine emission'}
             value = 0.580;
+        case 'axial length'
+            value = 16.56;  % OD for 838
     end

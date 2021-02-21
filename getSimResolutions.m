@@ -2,36 +2,36 @@ function T = getSimResolutions(varargin)
     % GETSIMRESOLUTIONS
     %
     % Description:
-    %   Utility function to compare two systems 
+    %   Compare the resolution of the two systems 
     %
     % Syntax:
     %   T = getSimResolutions(varargin)
     %
     % History:
     %   10Feb2021 - SSP
+    %   19Feb2021 - SSP - Simplified inputs and outputs
     % ---------------------------------------------------------------------
 
     ip = inputParser();
-    addParameter(ip, 'wl', assumptions('wl'), @isnumeric);
-    addParameter(ip, 'n', assumptions('n'), @isnumeric);
-    addParameter(ip, 'NA', assumptions('na'), @isnumeric);
+    ip.CaseSensitive = false;
+    ip.KeepUnmatched = true;
     addParameter(ip, 'Output', 'fwhm',... 
         @(x) ismember(lower(x), {'fwhm', 'sd'}));
     parse(ip, varargin{:});
 
-    wl = ip.Results.wl;
-    n = ip.Results.n;
-    NA = ip.Results.NA;
+    [wl, NA, n] = parseParameters(ip.Unmatched);
     outputType = ip.Results.Output;
+    fprintf('Resolution (%s) calculated with:\n', upper(outputType));
+    fprintf('\twl=%u, NA=%.2f, n=%.2f\n', 1000*wl, NA, n);
 
     lateral1 = lFWHM(wl, NA, 'conv');
-    lateral2 = lateral1 / 2;
-
     axial1 = aFWHM(wl, NA, n, 'conv');
+    
+    lateral2 = lateral1 / 2;
     axial2 = aFWHM(wl, NA, n, 'conf');
     
-    A = [lateral1; lateral2];
-    B = [axial1; axial2];
+    A = [lateral1; axial1];
+    B = [lateral2; axial2];
     
     if strcmp(outputType, 'sd')
         A = fwhm2sd(A);
@@ -39,5 +39,5 @@ function T = getSimResolutions(varargin)
     end
 
     T = table(A, B,... 
-        'VariableNames', {'lateral', 'axial'},...
-        'RowNames', {'System A', 'System B'});
+        'VariableNames', {'A', 'B'},...
+        'RowNames', {'lateral', 'axial'});

@@ -13,6 +13,7 @@ function [wl, NA, n] = parseParameters(varargin)
 
     ip = inputParser();
     ip.CaseSensitive = false;
+    ip.KeepUnmatched = true;
     addParameter(ip, 'wavelength', assumptions('wl'), @isnumeric);
     addParameter(ip, 'NA', assumptions('na'), @isnumeric);
     addParameter(ip, 'n', assumptions('n'), @isnumeric);
@@ -21,5 +22,3 @@ function [wl, NA, n] = parseParameters(varargin)
     wl = ip.Results.wavelength;
     NA = ip.Results.NA;
     n = ip.Results.n;
-
-end

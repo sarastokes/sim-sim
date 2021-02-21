@@ -1,15 +1,20 @@
-function [u, dist] = axialIntensityDist(z, varargin)
+function [I, v] = axialIntensityDist(z, microscopeType, varargin)
     % AXIALINTENSITYDIST
     %
     % Description:
-    %   Get axial focal-field intensity distribution
+    %   Get intensity distribution along the optical axis
     %
     % Syntax:
-    %   [u, dist] = axialIntensityDist(z, varargin)
+    %   [I, v] = axialIntensityDist(z, microscopeType, varargin)
     %
     % History:
     %   19Feb2021 - SSP
+    %   20Feb2021 - SSP - Added confocal 
     % ---------------------------------------------------------------------
 
     u = axialOU(z, varargin{:});
-    dist = (sin(u / 4) ./ (u / 4)) .^ 2;
+    if strcmp(microscopeType, 'conv')
+        I = (sin(u / 4) ./ (u / 4)) .^ 2;
+    else
+        I = (sin(u / 4) ./ (u / 4)) .^ 4;
+    end

@@ -6,6 +6,9 @@ function [dx, dz] = nyquistSampleDistance(microscopeType, varargin)
     %
     % Syntax:
     %   [dx, dy] = nyquistSampleDistance(microscopeType, varargin)
+    %
+    % Reference:
+    %   https://svi.nl/NyquistRate 
     % ---------------------------------------------------------------------
 
     [wl, NA, n] = parseParameters(varargin{:});
