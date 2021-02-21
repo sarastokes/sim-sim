@@ -24,11 +24,11 @@ function T = getSimResolutions(varargin)
     fprintf('Resolution (%s) calculated with:\n', upper(outputType));
     fprintf('\twl=%u, NA=%.2f, n=%.2f\n', 1000*wl, NA, n);
 
-    lateral1 = lFWHM(wl, NA, 'conv');
-    axial1 = aFWHM(wl, NA, n, 'conv');
+    lateral1 = lateralFWHM(wl, NA, 'conv');
+    axial1 = axialFWHM(wl, NA, n, 'conv');
     
     lateral2 = lateral1 / 2;
-    axial2 = aFWHM(wl, NA, n, 'conf');
+    axial2 = axialFWHM(wl, NA, n, 'conf');
     
     A = [lateral1; axial1];
     B = [lateral2; axial2];

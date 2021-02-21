@@ -1,5 +1,9 @@
 # CHANGELOG
 
+### 02-21-2021
+- `psf2d.m` - generates 2D PSF from `lateralIntensityDist.m`
+- Changed `aFWHM.m` to `axialFWHM.m` and `lFWHM.m` to `lateralFWHM.m` for clarity and consistency
+
 ### 02-20-2021
 - Added confocal option to `lateralIntensityDist.m` and `axialIntensityDist.m`
 - `leica.m` - properties of Leica confocal used for some sample images

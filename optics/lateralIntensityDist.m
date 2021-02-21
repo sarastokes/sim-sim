@@ -12,7 +12,6 @@ function [I, v] = lateralIntensityDist(r, microscopeType, varargin)
     %   20Feb2021 - SSP - added confocal
     % ---------------------------------------------------------------------
     
-    
     v = lateralOU(r, varargin{:});
 
     % No value computed for v=0 so make small number

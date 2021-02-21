@@ -1,4 +1,15 @@
 function [x, y, z] = voxelRange(neuron, voxelSize)
+    % VOXELRANGE
+    %
+    % Description:
+    %   Split the area within a bounding box into voxels of a specific size
+    % 
+    % Syntax:
+    %   [x, y, z] = voxelRange(neuron, voxelSize)
+    %
+    % History:
+    %   9Feb2021 - SSP
+    % ---------------------------------------------------------------------
 
     boundingBox = voxelBox(neuron, voxelSize);
     
