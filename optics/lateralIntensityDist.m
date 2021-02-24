@@ -5,7 +5,7 @@ function [I, v] = lateralIntensityDist(r, microscopeType, varargin)
     %   Get lateral focal-field intensity distribution
     %
     % Syntax:
-    %   [I, v] = lateralIntensityDist(r, varargin)
+    %   [I, v] = lateralIntensityDist(r, microscopeType, varargin)
     %
     % History:
     %   19Feb2021 - SSP

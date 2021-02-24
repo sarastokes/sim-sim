@@ -13,8 +13,12 @@ function [I, v] = axialIntensityDist(z, microscopeType, varargin)
     % ---------------------------------------------------------------------
 
     u = axialOU(z, varargin{:});
+    u(u==0) = eps;
+    
     if strcmp(microscopeType, 'conv')
         I = (sin(u / 4) ./ (u / 4)) .^ 2;
     else
         I = (sin(u / 4) ./ (u / 4)) .^ 4;
     end
+    
+    I = I / max(I(:));

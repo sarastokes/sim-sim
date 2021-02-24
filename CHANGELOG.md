@@ -1,5 +1,11 @@
 # CHANGELOG
 
+### 02-22-2021
+- New class-based approach to each imaging system (`System.m`, `FloodIllum.m`, `SuperRes.m`)
+- `psf3d.m` - 3D PSF calculation
+- `equalSpanAxes.m` - equalize X and Y dimensions of 2D neuron projection
+- `getFrameVoxels.m` - returns size in microns of each pixel returned from the `getframe` function
+
 ### 02-21-2021
 - `psf2d.m` - generates 2D PSF from `lateralIntensityDist.m`
 - Changed `aFWHM.m` to `axialFWHM.m` and `lFWHM.m` to `lateralFWHM.m` for clarity and consistency
