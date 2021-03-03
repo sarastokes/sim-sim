@@ -1,5 +1,5 @@
 # sim-sim
-Simulations of structured illumination microscopy - resolution of RGC dendrites
+Simulations of super resolution microscopy to  image RGC dendrites
 
 ### References
 - Gray, D.C., Wolfe, R., Gee, B.P, Scoles, D., Geng, Y., Masella, B.D., Dubra, A., Luque, S., Williams, D.R., Merigan, W.H. (2008) In vivo imaging of the fine structure of rhodamine-labeled macaque retinal ganglion cells. *Investigative Ophthalmology & Visual Science*, 49(1), 467-473

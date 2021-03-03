@@ -1,5 +1,9 @@
 # CHANGELOG
 
+### 02-23-2021
+- `runNeuron2D.m` and `runNeuron3D.m` for running full simulations
+- `SuperAxial.m`, `SuperLateral.m` split resolution improvements into lateral and axial
+
 ### 02-22-2021
 - New class-based approach to each imaging system (`System.m`, `FloodIllum.m`, `SuperRes.m`)
 - `psf3d.m` - 3D PSF calculation
